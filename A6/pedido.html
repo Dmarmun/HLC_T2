@@ -8,7 +8,7 @@
         function mostrarDatos(event) {
             event.preventDefault(); // Evita el envío del formulario
             //
-            if (confirm("¿Segudo que quieres inviar?")==true) {
+            // if (confirm("¿Segudo que quieres enviar?")==true) {
             //
             const form = document.getElementById('pedidoForm');
             const nombre = form.nombre.value;
@@ -25,9 +25,9 @@
                 <p><strong>Observaciones:</strong> ${observaciones}</p>
             `;
             //
-            } else {
-                document.getElementById('pedidoForm').reset();
-            }
+            // } else {
+            //     document.getElementById('pedidoForm').reset();
+            // }
             //
         }
     </script>
@@ -50,7 +50,7 @@
     <input type="number" id="cantidad" min="1" max="10" value="1" required><br><br>
     <label for="observaciones">Observaciones:</label><br>
     <textarea id="observaciones" name="observaciones" rows="5" cols="20"></textarea><br><br>
-    <button>Enviar</button>
+    <button onclick="if(confirm('¿Segudo que quieres enviar?')==false){document.getElementById('pedidoForm').reset()}">Enviar</button>
     <input type="reset" value="Resetear"><br><br>
 </form>
 <a href="index.html">Volver al inicio</a>
